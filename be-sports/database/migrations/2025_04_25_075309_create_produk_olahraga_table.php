@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk', 255);
             $table->text('deskripsi');
-            $table->decimal('harga', 18.2);
+            $table->decimal('harga', 18,2);
             $table->integer('stok');
             $table->string('warna', 50);
             $table->string('ukuran');
