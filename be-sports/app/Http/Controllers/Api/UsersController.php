@@ -2,110 +2,99 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PostResource;
+use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use App\Http\Resources\PostResource;
 
-class UsersController extends Controller
+
+class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // ✅ List semua user
     public function index()
     {
         $users = User::all();
-        return response()->json($users);
-        return new PostResource(true, 'List Data Posts', $posts);
+        return new PostResource(true, 'List Data users', $users);
+        // return view('users.index', compact('users'));
     }
+
+    // ✅ Tampilkan form tambah user
     public function create()
     {
-       return view('users.create');
+        return view('users.create');
     }
-    /**
-     * Store a newly created resource in storage.
-     */
+
+    // ✅ Simpan user baru
     public function store(Request $request)
     {
-        // Validasi input
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
-        // Simpan user baru ke database
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'email_verified_at' => now(),
-            'password' => Hash::make($request->password),
-            'remember_token' => Str::random(10),
+        User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
         ]);
 
-        return response()->json([
-            'message' => 'User created successfully',
-            'user' => $user
-        ], 201);
+        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // ✅ Tampilkan detail user
+    public function show($id)
     {
-        $user = User::find($id);
-
-        if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
-        }
-
-        return response()->json($user);
+        $user= User::find($id);
+        return new PostResource(true, 'Detail Data User!', $user);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // ✅ Tampilkan form edit
+    public function edit(User $user)
     {
-        $user = User::find($id);
-
-        if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
-        }
-
-        $request->validate([
-            'name' => 'sometimes|string|max:255',
-            'email' => 'sometimes|string|email|max:255|unique:users,email,' . $id,
-            'password' => 'sometimes|string|min:6',
-        ]);
-
-        $user->name = $request->name ?? $user->name;
-        $user->email = $request->email ?? $user->email;
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
-        }
-
-        $user->save();
-
-        return response()->json(['message' => 'User updated successfully', 'user' => $user]);
+        return view('users.edit', compact('user'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    // ✅ Update user
+    public function update(Request $request, $id)
+{
+    $user = User::findOrFail($id);
+
+    $request->validate([
+        'name' => 'sometimes|string|max:255',
+        'email' => 'sometimes|email|unique:users,email,' . $id,
+        'password' => 'sometimes|min:6',
+    ]);
+
+    if ($request->has('name')) {
+        $user->name = $request->name;
+    }
+
+    if ($request->has('email')) {
+        $user->email = $request->email;
+    }
+
+    if ($request->has('password')) {
+        $user->password = bcrypt($request->password);
+    }
+
+    $user->save();
+
+    return response()->json([
+        'message' => 'User updated successfully',
+        'data' => $user
+    ]);
+}
+
+    // ✅ Hapus user
+    public function destroy($id)
     {
-        $user = User::find($id);
-
-        if (!$user) {
-            return response()->json(['message' => 'User not found'], 404);
-        }
-
+        $user = User::findOrFail($id);
         $user->delete();
-
-        return response()->json(['message' => 'User deleted successfully']);
+    
+        return response()->json([
+            'message' => 'User deleted successfully'
+        ], 200);
     }
 }

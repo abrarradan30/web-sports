@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Galeri extends Model
+class Berita extends Model
 {
     use HasFactory;
 
-    protected $table = 'galeri';
+    protected $table = 'berita';
 
     protected $fillable = [
         'judul',
         'deskripsi',
-        'url_media',
-        'tipe_media',
+        'gambar_sampul',
+        'tgl_dibuat',
     ];
 }
