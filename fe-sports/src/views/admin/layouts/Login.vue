@@ -6,7 +6,7 @@
       <!-- Sign Up Form -->
 <div class="form-container sign-up">
   <div class="flex items-center justify-center h-full">
-    <img src="@/image/besi.jpg" alt="SportHub Logo" class="w-72 h-72 object-cover rounded-lg shadow-lg" />
+    <img src="@/image/besi.jpg" alt="SportHub Logo" class="w-80 h-80 object-cover rounded-lg shadow-lg" />
   </div>
 </div>
 
