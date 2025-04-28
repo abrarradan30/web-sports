@@ -81,12 +81,12 @@
     <div class="toggle-panel toggle-left">
       <h1>Selamat Datang Kembali!</h1>
       <p>Masukkan email dan password akun Anda untuk mengakses semua fitur situs kami.</p>
-      <button v-show="isRegister" @click="isRegister = false">Masuk</button>
+      <button class="btn-masuk" v-show="isRegister" @click="isRegister = false">Masuk</button>
     </div>
     <div class="toggle-panel toggle-right">
       <h1>Kenali Kami Lebih Dekat</h1>
       <p>Kami berkomitmen memberikan berita, produk, dan update seputar dunia olahraga khusus untuk Anda.</p>
-      <button v-show="!isRegister" @click="isRegister = true">Tentang Kami</button>
+      <button class="btn-masuk" v-show="!isRegister" @click="isRegister = true">Tentang Kami</button>
     </div>
   </div>
 </div>
@@ -156,8 +156,8 @@ const register = () => {
 }
 
 body {
-  background-color: #547792; /* Background utama diubah ke #547792 */
-  background: linear-gradient(to right, #e2e2e2, #547792); /* Gradien disesuaikan */
+  background-color: #FF6500; /* Background utama diubah ke #FF6500 */
+  background: linear-gradient(to right, #e2e2e2, #FF6500); /* Gradien disesuaikan */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,8 +194,9 @@ body {
   margin: 15px 0 10px;
 }
 
+/* Style umum untuk semua tombol */
 .container button {
-  background-color: #94b4c1; /* Warna tombol diubah ke #94B4C1 */
+  background-color: #FF6500;
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -207,6 +208,15 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
+
+/* Style khusus tombol MASUK */
+.btn-masuk {
+  box-shadow: 0 8px 20px rgba(244, 0, 0, 0.7); /* Lebih besar dan glow */
+}
+
+
+
+
 
 .container button.hidden {
   background-color: transparent;
@@ -313,7 +323,7 @@ body {
 .toggle {
   background-color: #94b4c1; /* Warna toggle diubah ke #94B4C1 */
   height: 100%;
-  background: linear-gradient(to right, #94b4c1, #7a9db4); /* Gradien disesuaikan */
+  background: linear-gradient(to right, #FF6500, #ff7a21); /* Gradien disesuaikan */
   color: #fff;
   position: relative;
   left: -100%;
