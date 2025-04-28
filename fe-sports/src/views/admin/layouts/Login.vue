@@ -3,30 +3,13 @@
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div :class="['container', { active: isRegister }]">
       <!-- Sign Up Form -->
-      <div class="form-container sign-up">
-        <form @submit.prevent="register">
-          <h1>Create Account</h1>
-          <span>or use your email for registration</span>
-          <input
-            v-model="registerForm.name"
-            type="text"
-            placeholder="Name"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <input
-            v-model="registerForm.email"
-            placeholder="Email"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <input
-            v-model="registerForm.password"
-            type="password"
-            placeholder="Password"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+      <!-- Sign Up Form -->
+<div class="form-container sign-up">
+  <div class="flex items-center justify-center h-full">
+    <img src="@/image/besi.jpg" alt="SportHub Logo" class="w-72 h-72 object-cover rounded-lg shadow-lg" />
+  </div>
+</div>
+
 
       <!-- Sign In Form -->
       <div class="form-container sign-in">
@@ -80,7 +63,7 @@
   <div class="toggle">
     <div class="toggle-panel toggle-left">
       <h1>Selamat Datang Kembali!</h1>
-      <p>Masukkan email dan password akun Anda untuk mengakses semua fitur situs kami.</p>
+      <p>Kelola berita dan artikel terkini seputar dunia olahraga dengan mudah. Pembaruan informasi yang cepat dan akurat membantu pengunjung tetap terinformasi tentang perkembangan terbaru di berbagai cabang olahraga.</p>
       <button class="btn-masuk" v-show="isRegister" @click="isRegister = false">Masuk</button>
     </div>
     <div class="toggle-panel toggle-right">
@@ -101,6 +84,8 @@ import axios from 'axios'
 import { useRouter } from 'vue-router'
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
+
+
 
 
 const isRegister = ref(false)
