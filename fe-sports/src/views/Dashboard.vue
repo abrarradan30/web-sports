@@ -1,8 +1,7 @@
-<!-- src/views/layout/content/AboutView.vue -->
 <template>
+  <!-- <p>coding dashboard disini</p> -->
   <div class="about-container">
-    <h1>About Page</h1>
-    <p>This is the about page view</p>
+    <p>This is the Dashboard view</p>
   </div>
 </template>
 
