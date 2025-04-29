@@ -1,11 +1,14 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\GaleriController;
 
-Route::get('/user', function (Request $request) {
+Route::get('/galeri', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-//posts
-Route::apiResource('/user', App\Http\Controllers\Api\UserController::class);
+Route::apiResource('/galeri', GaleriController::class);
+Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit']);
+Route::put('/galeri/{id}', [GaleriController::class, 'update']);
+Route::delete('/galeri/{id}', [GaleriController::class, 'destroy']);
+
