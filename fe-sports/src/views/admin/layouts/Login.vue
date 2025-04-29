@@ -3,30 +3,13 @@
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div :class="['container', { active: isRegister }]">
       <!-- Sign Up Form -->
-      <div class="form-container sign-up">
-        <form @submit.prevent="register">
-          <h1>Create Account</h1>
-          <span>or use your email for registration</span>
-          <input
-            v-model="registerForm.name"
-            type="text"
-            placeholder="Name"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <input
-            v-model="registerForm.email"
-            placeholder="Email"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <input
-            v-model="registerForm.password"
-            type="password"
-            placeholder="Password"
-            class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
-          />
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+      <!-- Sign Up Form -->
+<div class="form-container sign-up">
+  <div class="flex items-center justify-center h-full">
+    <img src="@/image/besi.jpg" alt="SportHub Logo" class="w-80 h-80 object-cover rounded-lg shadow-lg" />
+  </div>
+</div>
+
 
       <!-- Sign In Form -->
       <div class="form-container sign-in">
@@ -80,13 +63,13 @@
   <div class="toggle">
     <div class="toggle-panel toggle-left">
       <h1>Selamat Datang Kembali!</h1>
-      <p>Masukkan email dan password akun Anda untuk mengakses semua fitur situs kami.</p>
-      <button v-show="isRegister" @click="isRegister = false">Masuk</button>
+      <p>Kelola berita dan artikel terkini seputar dunia olahraga dengan mudah. Pembaruan informasi yang cepat dan akurat membantu pengunjung tetap terinformasi tentang perkembangan terbaru di berbagai cabang olahraga.</p>
+      <button class="btn-masuk" v-show="isRegister" @click="isRegister = false">Masuk</button>
     </div>
     <div class="toggle-panel toggle-right">
       <h1>Kenali Kami Lebih Dekat</h1>
       <p>Kami berkomitmen memberikan berita, produk, dan update seputar dunia olahraga khusus untuk Anda.</p>
-      <button v-show="!isRegister" @click="isRegister = true">Tentang Kami</button>
+      <button class="btn-masuk" v-show="!isRegister" @click="isRegister = true">Tentang Kami</button>
     </div>
   </div>
 </div>
@@ -101,6 +84,8 @@ import axios from 'axios'
 import { useRouter } from 'vue-router'
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
+
+
 
 
 const isRegister = ref(false)
@@ -156,8 +141,8 @@ const register = () => {
 }
 
 body {
-  background-color: #547792; /* Background utama diubah ke #547792 */
-  background: linear-gradient(to right, #e2e2e2, #547792); /* Gradien disesuaikan */
+  background-color: #FF6500; /* Background utama diubah ke #FF6500 */
+  background: linear-gradient(to right, #e2e2e2, #FF6500); /* Gradien disesuaikan */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,8 +179,9 @@ body {
   margin: 15px 0 10px;
 }
 
+/* Style umum untuk semua tombol */
 .container button {
-  background-color: #94b4c1; /* Warna tombol diubah ke #94B4C1 */
+  background-color: #FF6500;
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -207,6 +193,15 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
+
+/* Style khusus tombol MASUK */
+.btn-masuk {
+  box-shadow: 0 8px 20px rgba(244, 0, 0, 0.7); /* Lebih besar dan glow */
+}
+
+
+
+
 
 .container button.hidden {
   background-color: transparent;
@@ -313,7 +308,7 @@ body {
 .toggle {
   background-color: #94b4c1; /* Warna toggle diubah ke #94B4C1 */
   height: 100%;
-  background: linear-gradient(to right, #94b4c1, #7a9db4); /* Gradien disesuaikan */
+  background: linear-gradient(to right, #FF6500, #ff7a21); /* Gradien disesuaikan */
   color: #fff;
   position: relative;
   left: -100%;
