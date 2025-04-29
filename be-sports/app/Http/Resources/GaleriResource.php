@@ -2,26 +2,43 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class GaleriResource extends JsonResource
 {
+    //define properti
+    public $status;
+    public $message;
+    public $resource;
+
     /**
-     * Transform the resource into an array.
+     * __construct
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array<string, mixed>
+     * @param  mixed $status
+     * @param  mixed $message
+     * @param  mixed $resource
+     * @return void
      */
-    public function toArray($request)
+    public function __construct($status, $message, $resource)
+    {
+        parent::__construct($resource);
+        $this->status  = $status;
+        $this->message = $message;
+    }
+
+    /**
+     * toArray
+     *
+     * @param  mixed $request
+     * @return array
+     */
+    public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'judul' => $this->judul,
-            'deskripsi' => $this->deskripsi,
-            'url_media' => $this->url_media,
-            'tipe_media' => $this->tipe_media,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'success'   => $this->status,
+            'message'   => $this->message,
+            'data'      => $this->resource
         ];
     }
 }

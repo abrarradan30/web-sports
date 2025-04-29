@@ -49,12 +49,7 @@ class GaleriController extends Controller
             'tipe_media' => $request->tipe_media,
         ]);
 
-        // Return response dengan resource
-        return (new GaleriResource($galeri))
-            ->additional([
-                'success' => true,
-                'message' => 'Data Galeri Berhasil Ditambahkan!'
-            ]);
+        return new GaleriResource(true, 'Data Post Berhasil Ditambahkan!', $galeri);
     }
 
 
@@ -81,49 +76,42 @@ class GaleriController extends Controller
             'url_media' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tipe_media' => 'required|in:gambar,video',
         ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Validasi gagal',
-                'errors' => $validator->errors()
-            ], 422);
+        
+        // perbaiki 
+         if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
         }
 
         $galeri = Galeri::find($id);
 
-        if (!$galeri) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Galeri tidak ditemukan'
-            ], 404);
-        }
 
-        if ($request->hasFile('url_media')) {
-            // Hapus file lama (kalau ada)
-            if ($galeri->url_media && Storage::disk('/storage/app/public/')->exists($galeri->url_media)) {
-                Storage::disk('/storage/app/public/')->delete($galeri->url_media);
-            }
+       //check if image is not empty
+       if ($request->hasFile('image')) {
 
-            // Upload file baru
-            $file = $request->file('url_media');
-            $fileName = $file->hashName();
-            $file->storeAs('/storage/app/public/', $fileName); // Simpan ke storage/app/public
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('/storage/app/public/', $image->hashName());
 
-            $galeri->url_media = $fileName;
-        }
+        //delete old image
+        Storage::delete('/storage/app/public/' . basename($galeri->image));
 
-        // Update data lainnya
-        $galeri->judul = $request->judul;
-        $galeri->deskripsi = $request->deskripsi;
-        $galeri->tipe_media = $request->tipe_media;
-        $galeri->save();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Galeri berhasil diperbarui',
-            'data' => $galeri
+        //update gale$galeri with new image
+        $galeri->update([
+            'judul'     => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tipe_media'   => $request->tipe_media,
         ]);
+    } else {
+
+        //update gale$galeri without image
+        $galeri->update([
+            'judul'     => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tipe_media'   => $request->tipe_media,
+        ]);
+          //return response
+          return new GaleriResource(true, 'Data Post Berhasil Diubah!', $galeri);
+    }
     }
 
 
