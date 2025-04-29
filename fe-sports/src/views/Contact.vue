@@ -1,11 +1,10 @@
 <template>
-  <section id="contact" class="contact py-16 px-4">
+  <section id="contact" class="contact py-3    px-10 mt-0.5">
     <h2 class="text-4xl font-bold text-center mb-4">
       <span class="text-[#ff6500]">Kontak</span> Kami
     </h2>
     <p class="text-center max-w-xl mx-auto mb-8">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis voluptas
-      suscipit enim autem quis. Suscipit.
+      Ada pertanyaan atau saran seputar dunia olahraga? Kirim pesanmu lewat form ini  kami siap membantu kamu!
     </p>
     <div class="flex flex-col md:flex-row mt-8 bg-[#ff6500]">
       <!-- Map Start -->
