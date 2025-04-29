@@ -17,4 +17,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    historyApiFallback: true, // ✅ Fix untuk akses langsung ke /Login dan lainnya
+  },
 })
