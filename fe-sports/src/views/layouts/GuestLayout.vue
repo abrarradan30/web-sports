@@ -46,8 +46,57 @@ const router = useRouter()
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#FF6500] text-white text-center py-4">
-      &copy; 2025 CMS Olahraga by Tim K2
-    </footer>
+    <footer class="bg-gray-900 text-white py-10 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    
+    <!-- Logo & Deskripsi -->
+    <div>
+      <h2 class="text-2xl font-bold text-amber-400 mb-2">SportID</h2>
+      <p class="text-sm text-gray-300">
+        CMS olahraga Indonesia yang mendukung komunitas, event, dan berita terkini dunia olahraga nasional.
+      </p>
+    </div>
+
+    <!-- Navigasi Cepat -->
+    <div>
+      <h3 class="text-lg font-semibold text-amber-400 mb-3">Navigasi</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="/" class="hover:text-white">Beranda</a></li>
+        <li><a href="/berita" class="hover:text-white">Berita</a></li>
+        <li><a href="/kategori" class="hover:text-white">Kategori</a></li>
+        <li><a href="/product" class="hover:text-white">Product</a></li>
+        <li><a href="/galeri" class="hover:text-white">Galeri</a></li>
+        <li><a href="/contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Kontak -->
+    <div>
+      <h3 class="text-lg font-semibold text-amber-400 mb-3">Kontak Kami</h3>
+      <p class="text-sm text-gray-300">
+        Jl. Atlet Nasional No.10, Jakarta<br />
+        Email: info@sportid.id<br />
+        Telp: +62 812 3456 7890
+      </p>
+    </div>
+
+    <!-- Sosial Media -->
+    <div>
+      <h3 class="text-lg font-semibold text-amber-400 mb-3">Ikuti Kami</h3>
+      <div class="flex space-x-4 text-2xl">
+        <a href="https://www.facebook.com/kemenporaIndonesia/?fref=ts" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/kemenpora?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/KEMENPORA_RI" target="_blank" class="hover:text-sky-400"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCxVNYxq1cYOZfu5ch18xOwA" target="_blank" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Garis Bawah & Copyright -->
+  <div class="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
+    &copy; 2025 SportID. Semua hak cipta dilindungi.
+  </div>
+</footer>
   </div>
 </template>
