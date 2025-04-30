@@ -9,3 +9,6 @@ Route::get('/user', function (Request $request) {
 
 //posts
 Route::apiResource('/user', App\Http\Controllers\Api\UserController::class);
+
+Route::apiResource('/kategori', App\Http\Controllers\Api\KategoriController::class);
+Route::apiResource('/produk', App\Http\Controllers\Api\ProdukController::class);
