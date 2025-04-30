@@ -1,8 +1,6 @@
 <template>
-  
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div :class="['container', { active: isRegister }]">
-      <!-- Sign Up Form -->
       <!-- Sign Up Form -->
 <div class="form-container sign-up">
   <div class="flex items-center justify-center h-full">
@@ -53,7 +51,7 @@
             placeholder="Password"
             class="w-full px-4 py-2 rounded-lg bg-white text-gray-800 placeholder-gray-500 ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
           />
-          <!-- <a href="#">Forgot your password?</a> -->
+        
           <button type="submit">Sign In</button>
         </form>
       </div>
@@ -84,8 +82,6 @@ import axios from 'axios'
 import { useRouter } from 'vue-router'
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
-
-
 
 
 const isRegister = ref(false)
