@@ -1,173 +1,92 @@
 <template>
-  <div class="dashboard">
-    <main class="main-content">
-      <section class="stats">
-        <div class="card orange">
-          <i class="icon">📄</i>
-          <div>Total Articles<br><strong>120</strong></div>
-        </div>
-        <div class="card light-orange">
-          <i class="icon">📁</i>
-          <div>Categories<br><strong>8</strong></div>
-        </div>
-        <div class="card darker-orange">
-          <i class="icon">💬</i>
-          <div>Comments<br><strong>352</strong></div>
-        </div>
-        <div class="card red">
-          <i class="icon">👤</i>
-          <div>Users<br><strong>57</strong></div>
-        </div>
-      </section>
+  <div>
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[80vh]" style="background-image: url('/images/hero.jpg')">
+      <div class="absolute inset-0 bg-black/50 z-10">
+        <video
+          class="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoplay
+          muted
+          playsinline
+          webkit-playsinline
+        >
+        <source src="/videos/snow.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- Hero Content -->
+      <Transition name="fade" appear>
+        <div
+          class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4"
+        >
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">TINGKATKAN PERFORMA ANDA</h1>
+          <p class="text-xl text-white max-w-2xl mb-8">
+  Gabung bersama komunitas olahraga terbaik
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+  <a
+    href="https://girlsbeyond.com/2025/04/02/lifestyle/6-komunitas-olahraga-kekinian-di-jakarta-gabung-sekarang"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-center"
+  >
+    Mulai Sekarang
+  </a>
+</div>
 
-      <section class="content">
-        <div class="articles">
-          <h3><strong>Latest Articles</strong></h3>
-          <ul>
-            <li v-for="(article, index) in articles" :key="index">
-              <img :src="article.image" alt="" />
-              <div>
-                <p>{{ article.title }}</p>
-                <span>{{ article.time }}</span>
-              </div>
-            </li>
-          </ul>
         </div>
+      </Transition>
+    </section>
 
-        <div class="charts">
-          <h3><strong>Categories  </strong></h3>
-          <canvas id="donutChart" height="200"></canvas>
-          <ul class="legend">
-            <li v-for="(label, i) in categoryLabels" :key="i">
-              <span :style="{ backgroundColor: categoryColors[i] }"></span> {{ label }}
-            </li>
-          </ul>
+    <!-- Kategori Olahraga -->
+    <section class="py-12 px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">Kategori Olahraga</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div v-for="kategori in kategoriOlahraga" :key="kategori" class="bg-gray-100 py-6 rounded shadow text-lg font-semibold">
+          {{ kategori }}
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <!-- Event Unggulan -->
+    <section class="py-12 px-6 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-8">Event Unggulan</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div v-for="event in events" :key="event.id" class="bg-white w-72 rounded-lg shadow-md overflow-hidden">
+          <img :src="event.image" :alt="event.title" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">{{ event.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
-<script>
-import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
-Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
+<script setup>
+import besi from '@/image/besi.jpg';
+import handball from '@/image/handball.jpg';
 
-export default {
-  data() {
-    return {
-      articles: [
-        { title: 'The Benefits of Regular Exercise', time: '5 hours ago', image: 'https://via.placeholder.com/60' },
-        { title: 'Top 10 Football Players of 2024', time: '30 hours ago', image: 'https://via.placeholder.com/60' },
-        { title: 'How to Improve Your Running Speed', time: '5 hours ago', image: 'https://via.placeholder.com/60' },
-        { title: 'The Rise of Women’s Soccer', time: '8 hours ago', image: 'https://via.placeholder.com/60' },
-        { title: 'Strength Training Tips for Athletes', time: '3 hours ago', image: 'https://via.placeholder.com/60' },
-      ],
-      categoryLabels: ['Anggar', 'Handball', 'Baseball', 'Angkat Besi', 'Sumo'],
-      categoryColors: ['#fb923c', '#f97316', '#fdba74', '#facc15', '#fcd34d']
-    }
+const kategoriOlahraga = [
+  'Anggar',
+  'HandBall',
+  'BaseBall',
+  'Angkat Besi',
+  'Sumo',
+];
+
+const events = [
+  {
+    id: 1,
+    title: 'SEA Games 2025 di Thailand',
+    description: 'Tim anggar Indonesia akan berkompetisi di ajang olahraga terbesar se-Asia Tenggara.',
+    image: besi
   },
-  mounted() {
-    new Chart(document.getElementById('donutChart'), {
-      type: 'doughnut',
-      data: {
-        labels: this.categoryLabels,
-        datasets: [{
-          data: [20, 15, 25, 18, 22],
-          backgroundColor: this.categoryColors
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-    });
+  {
+    id: 2,
+    title: 'Street Basketball Cup',
+    description: 'Tunjukkan skillmu di lapangan jalanan!',
+    image: handball
   }
-}
+];
 </script>
-
-<style scoped>
-.dashboard {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #f9fafb;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.stats {
-  display: flex;
-  gap: 20px;
-}
-.card {
-  flex: 1;
-  background: #fb923c;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.card.orange { background: #fb923c; }
-.card.light-orange { background: #fdba74; }
-.card.darker-orange { background: #f97316; }
-.card.red { background: #ef4444; }
-.icon {
-  font-size: 24px;
-}
-
-.content {
-  display: flex;
-  gap: 20px;
-}
-.articles, .charts {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  flex: 1;
-}
-.articles ul {
-  list-style: none;
-  padding: 0;
-}
-.articles li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.articles img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-top: 10px;
-  padding: 0;
-  gap: 10px;
-}
-.legend li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-}
-.legend span {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  border-radius: 2px;
-}
-</style>

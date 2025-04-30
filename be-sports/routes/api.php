@@ -10,5 +10,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [UsersController::class, 'logout']);
 });
 
-Route::apiResource('/galeri', GaleriController::class);
 
+Route::apiResource('/galeri', GaleriController::class);
