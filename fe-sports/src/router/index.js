@@ -17,7 +17,7 @@ import ContactAdmin from '@/views/admin/ContactAdmin.vue'
 import GuestLayout from '@/views/layouts/GuestLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Berita from '@/views/Berita.vue'
-import Kategori from '@/views/Kategori.vue'
+import Jenis from '@/views/Jenis.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
 import Contact from '@/views/Contact.vue'
@@ -40,9 +40,9 @@ const routes = [
         component: Berita,
       },
       {
-        path: '/kategori',
-        name: 'Kategori',
-        component: Kategori,
+        path: '/jenis',
+        name: 'Jenis',
+        component: Jenis,
       },
       {
         path: '/product',
