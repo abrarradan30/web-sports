@@ -2,6 +2,8 @@
     <!-- <p>coding berita disini</p> -->
     <div class="about-container">
       <p>This is the Berita view</p>
+      <i class="fa-solid fa-badge-check"></i>
+
     </div>
   </template>
   
