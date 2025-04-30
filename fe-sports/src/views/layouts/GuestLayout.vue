@@ -12,7 +12,7 @@
     <!-- Mega Menu -->
     <div class="relative group">  
       <span class="cursor-pointer hover:text-[#ff6500] transition duration-300 ease-in-out">
-        Jenis
+        Olahraga
       </span>
       <div class="fixed left-0 right-0 top-[85px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
         <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
@@ -84,7 +84,7 @@
       <ul class="space-y-2 text-sm text-gray-300">
         <li><a href="/" class="hover:text-white">Dashboard</a></li>
         <li><a href="/berita" class="hover:text-white">Berita</a></li>
-        <li><a href="/jenis" class="hover:text-white">Jenis</a></li>
+        <li><a href="/olahraga" class="hover:text-white">Olahraga</a></li>
         <li><a href="/contact" class="hover:text-white">Riview</a></li>
       </ul>
     </div>
