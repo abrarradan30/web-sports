@@ -15,10 +15,9 @@ class GaleriController extends Controller
     // Tampilkan semua galeri (GET /galeri)
     public function index()
     {
-        //get all galeri$galeri
-        $galeri = Galeri::latest()->paginate(5);
+        // $galeri = Galeri::latest()->paginate(5); // data dibatasi 5
+        $galeri = Galeri::latest()->get(); // data tampil semua
 
-        //return collection of galeri$galeri as a resource
         return new GaleriResource(true, 'List Data Galeri', $galeri);
     }
 
@@ -28,7 +27,7 @@ class GaleriController extends Controller
             'judul' => 'required',
             'deskripsi' => 'required',
             'url_media' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'tipe_media' => 'required|in:gambar,video', // Validasi tipe media sesuai migrasi
+            'tipe_media' => 'required|in:gambar,video', 
 
         ]);
 
@@ -37,14 +36,15 @@ class GaleriController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        //upload image
-        $image = $request->file('url_media');
-        $image->storeAs('/storage/galeri/app/public/', $image->hashName());
+        //upload url_media
+        $url_media = $request->file('url_media');
+        $url_media->storeAs('/public/galeri', $url_media->hashName());
 
         //create gale$galeri
         $galeri = Galeri::create([
             'judul'     => $request->judul,
             'deskripsi'   => $request->deskripsi,
+            'url_media'   => $url_media->hashName(),
             'tipe_media'   => $request->tipe_media,
         ]);
 
@@ -68,7 +68,6 @@ class GaleriController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'deskripsi' => 'required',
-            'url_media' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tipe_media' => 'required|in:gambar,video',
         ]);
 
@@ -81,19 +80,20 @@ class GaleriController extends Controller
 
 
         //check if image is not empty
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('url_media')) {
 
-            //upload image
-            $image = $request->file('image');
-            $image->storeAs('/storage/app/public/', $image->hashName());
+            //upload url_media
+            $url_media = $request->file('url_media');
+            $url_media->storeAs('/public/galeri/', $url_media->hashName());
 
             //delete old image
-            Storage::delete('/storage/app/public/' . basename($galeri->image));
+            Storage::delete('/public/galeri/' . basename($galeri->url_media));
 
             //update gale$galeri with new image
             $galeri->update([
                 'judul'     => $request->judul,
                 'deskripsi' => $request->deskripsi,
+                'url_media' => $url_media->hashName(),
                 'tipe_media'   => $request->tipe_media,
             ]);
         } else {
@@ -109,38 +109,13 @@ class GaleriController extends Controller
         }
     }
 
-
-    // Tampilkan data galeri untuk form edit (GET /galeri/{id}/edit)
-    public function edit($id)
-    {
-        // Cari galeri berdasarkan ID
-        $galeri = Galeri::find($id);
-
-        // Jika tidak ditemukan
-        if (!$galeri) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Galeri tidak ditemukan'
-            ], 404);
-        }
-
-        // Jika ditemukan, kembalikan data
-        return response()->json([
-            'success' => true,
-            'message' => 'Data galeri ditemukan',
-            'data' => $galeri
-        ], 200);
-    }
-
-
-
     public function destroy($id)
     {
         //find gale$galeri by ID
         $galeri = Galeri::find($id);
 
         //delete image
-        Storage::delete('/storage/app/public/' . basename($galeri->url_media));
+        Storage::delete('/public/galeri/' . basename($galeri->url_media));
 
         //delete gale$galeri
         $galeri->delete();

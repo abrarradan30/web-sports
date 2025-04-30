@@ -19,10 +19,10 @@ class Galeri extends Model
         'tipe_media',
     ];
 
-    protected function url_media(): Attribute
+    protected function urlMedia(): Attribute
     {
         return Attribute::make(
-            get: fn ($url_media) => url('/storage/galeri/app/public/' . $url_media),
+            get: fn ($url_media) => url('/storage/galeri/' . $url_media),
         );
     }
 }
