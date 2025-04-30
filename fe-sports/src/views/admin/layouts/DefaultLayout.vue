@@ -73,7 +73,7 @@ const confirmLogout = () => {
     <div>
       <h2 class="text-2xl font-bold text-amber-400 mb-2">SportID</h2>
       <p class="text-sm text-gray-300">
-        CMS olahraga Indonesia yang mendukung komunitas, event, dan berita terkini dunia olahraga nasional.
+        Website CMS olahraga yang mendukung event dan berita terkini dunia olahraga nasional.
       </p>
     </div>
 
@@ -81,7 +81,7 @@ const confirmLogout = () => {
     <div>
       <h3 class="text-lg font-semibold text-amber-400 mb-3">Navigasi</h3>
       <ul class="space-y-2 text-sm text-gray-300">
-        <li><a href="/admin" class="hover:text-white">Beranda</a></li>
+        <li><a href="/admin" class="hover:text-white">Dashboard</a></li>
         <li><a href="/adminberita" class="hover:text-white">Berita</a></li>
         <li><a href="/adminkategori" class="hover:text-white">Kategori</a></li>
         <li><a href="/adminproduct" class="hover:text-white">Product</a></li>
