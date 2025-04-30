@@ -17,37 +17,37 @@
           <span class="cursor-pointer hover:text-[#1E3A8A] transition duration-300 ease-in-out">
             Kategori
           </span>
-         <!-- Dropdown with images -->
-         <div class="fixed left-0 right-0 top-[80px] bg-[#FF6500] text-black shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
-  <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-6">
-
-
-
+          <div class="fixed left-0 right-0 top-[80px] bg-[#FF6500] text-white drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+            <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
               <!-- Kategori 1 -->
-              <RouterLink to="/kategori/anggar" class="block text-center group hover:scale-105 transition">
-                <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-28 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-semibold text-sm">Anggar</span>
-              </RouterLink>
+              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+                <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <span class="font-bold text-base">Anggar</span>
+              </div>
+
               <!-- Kategori 2 -->
-              <RouterLink to="/kategori/handball" class="block text-center group hover:scale-105 transition">
-                <img src="@/image/handball.jpg" alt="Handball" class="w-full h-28 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-semibold text-sm">Handball</span>
-              </RouterLink>
+              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+                <img src="@/image/handball.jpg" alt="Handball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <span class="font-bold text-base">Handball</span>
+              </div>
+
               <!-- Kategori 3 -->
-              <RouterLink to="/kategori/baseball" class="block text-center group hover:scale-105 transition">
-                <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-28 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-semibold text-sm">Baseball</span>
-              </RouterLink>
+              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+                <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <span class="font-bold text-base">Baseball</span>
+              </div>
+
               <!-- Kategori 4 -->
-              <RouterLink to="/kategori/angkat-besi" class="block text-center group hover:scale-105 transition">
-                <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-28 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-semibold text-sm">Angkat Besi</span>
-              </RouterLink>
+              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+                <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <span class="font-bold text-base">Angkat Besi</span>
+              </div>
+
               <!-- Kategori 5 -->
-              <RouterLink to="/kategori/sumo" class="block text-center group hover:scale-105 transition">
-                <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-28 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-semibold text-sm">Sumo</span>
-              </RouterLink>
+              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+                <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <span class="font-bold text-base">Sumo</span>
+              </div>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
       </router-link>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden text-gray-800 focus:outline-none">
+      <button class="md:hidden text-white focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
