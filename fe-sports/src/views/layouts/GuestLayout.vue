@@ -96,7 +96,6 @@
       <ul class="space-y-2 text-sm text-gray-300">
         <li><a href="/" class="hover:text-white">Dashboard</a></li>
         <li><a href="/berita" class="hover:text-white">Berita</a></li>
-        <li><a href="/kategori" class="hover:text-white">Kategori</a></li>
         <li><a href="/product" class="hover:text-white">Product</a></li>
         <li><a href="/galeri" class="hover:text-white">Galeri</a></li>
         <li><a href="/contact" class="hover:text-white">Contact</a></li>
