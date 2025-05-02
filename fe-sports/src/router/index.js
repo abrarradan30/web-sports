@@ -17,7 +17,6 @@ import ContactAdmin from '@/views/admin/ContactAdmin.vue'
 import GuestLayout from '@/views/layouts/GuestLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Berita from '@/views/Berita.vue'
-import Olahraga from '@/views/Olahraga.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
 import Riview from '@/views/Riview.vue'
@@ -40,11 +39,6 @@ const routes = [
         component: Berita,
       },
       {
-        path: '/olahraga',
-        name: 'Olahraga',
-        component: Olahraga,
-      },
-      {
         path: '/product',
         name: 'Product',
         component: Product,
@@ -58,6 +52,31 @@ const routes = [
         path: '/riview',
         name: 'Riview',
         component: Riview,
+      },
+      {
+        path: '/anggar',
+        name: 'Anggar',
+        component: Anggar,
+      },
+      {
+        path: '/handball',
+        name: 'Handball',
+        component: Handball,
+      },
+      {
+        path: '/baseball',
+        name: 'Baseball',
+        component: Baseball,
+      },
+      {
+        path: '/angkatbesi',
+        name: 'Angkatbesi',
+        component: Angkatbesi,
+      },
+      {
+        path: '/sumo',
+        name: 'Sumo',
+        component: Sumo,
       },
     ],
   },

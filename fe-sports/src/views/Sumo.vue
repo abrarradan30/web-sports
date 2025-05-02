@@ -1,7 +1,7 @@
 <template>
-    <!-- <p>coding Kategori disini</p> -->
+    <!-- <p>coding Sumo disini</p> -->
     <div class="about-container">
-      <p>This is the Kategori view</p>
+      <p>This is the Sumo view</p>
     </div>
   </template>
   
