@@ -17,30 +17,30 @@
       <div class="fixed left-0 right-0 top-[50px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
         <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
           <!-- Olahraga 1 -->
-          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+          <RouterLink to="/anggar"class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Anggar</span>
-          </div>
+         </RouterLink>
           <!-- Olahraga 2 -->
-          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+          <RouterLink to="/handball"class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/handball.jpg" alt="Handball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Handball</span>
-          </div>
+          </RouterLink>
           <!-- Olahraga 3 -->
-          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+          <RouterLink to="/baseball" class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Baseball</span>
-          </div>
+          </RouterLink>
           <!-- Olahraga 4 -->
-          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+          <RouterLink to="/angkatbesi"class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Angkat Besi</span>
-          </div>
+          </RouterLink>
           <!-- Olahraga 5 -->
-          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+          <RouterLink to="/sumo" class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Sumo</span>
-          </div>
+          </RouterLink>
         </div>
       </div>
     </div>
