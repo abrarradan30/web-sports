@@ -1,66 +1,94 @@
 <template>
-  <section id="contact" class="contact py-3    px-10 mt-0.5">
-    <h2 class="text-4xl font-bold text-center mb-4 text-[#1E3E62]">
-      <span class="text-[#ff6500]">Kontak</span> Kami
-    </h2>
-    <p class="text-center max-w-xl mx-auto mb-8">
-      Ada pertanyaan atau saran seputar dunia olahraga? Kirim pesanmu lewat form ini  kami siap membantu kamu!
-    </p>
-    <div class="flex flex-col md:flex-row mt-8 bg-[#ff6500]">
-      <!-- Map Start -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.25708163159!2d112.64264265151!3d7.275443784810686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf8381ac47f%3A0x3027a76e352be40!2sSurabaya%2C%20Kota%20SBY%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1681016119991!5m2!1sid!2sid"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        class="flex-1 w-full object-cover min-h-[300px]"
-      ></iframe>
-      <!-- Map End -->
+  <div class="p-6 bg-white rounded-2xl shadow-md grid gap-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-orange-600 mb-4">Review Olahraga</h2>
 
-      <form action="" class="flex-1 p-12 text-center bg-[#fff4e6]">
-        <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-user text-[#1E3E62]  text-2xl mr-4"></i>
-          <input
-            type="text"
-            placeholder="Nama"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
-          />
-        </div>
+    <!-- Input hanya nama -->
+    <form @submit.prevent="addSport" class="grid gap-4 bg-orange-50 p-4 rounded-lg">
+      <input
+        v-model="sportName"
+        type="text"
+        placeholder="Masukkan Nama Olahraga"
+        class="p-2 border rounded"
+        required
+      />
+      <button
+        type="submit"
+        class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
+      >
+        Tampilkan
+      </button>
+    </form>
 
-        <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-envelope text-[#1E3E62] text-2xl mr-4"></i>
-          <input
-            type="email"
-            placeholder="Email"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
-          />
-        </div>
-
-        <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-phone text-[#1E3E62] text-2xl mr-4"></i>
-          <input
-            type="text"
-            placeholder="No HP"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="mt-12 inline-block px-12 py-4 text-[1.2rem] text-white bg-[#ff6500] rounded-md hover:opacity-90"
-        >
-          Kirim Pesan
-        </button>
-      </form>
+    <!-- Daftar review -->
+    <div v-if="sports.length" class="mt-6 grid gap-4">
+      <h3 class="text-xl font-semibold text-orange-600">Review yang Ditampilkan</h3>
+      <div
+        v-for="(sport, index) in sports"
+        :key="index"
+        class="border rounded-xl shadow p-4 animate__animated animate__fadeInUp"
+      >
+        <img
+          :src="sport.image"
+          :alt="sport.name"
+          class="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h4 class="text-lg font-semibold text-orange-500">{{ sport.name }}</h4>
+        <p class="text-gray-700 text-sm mt-1">{{ sport.review }}</p>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+
+// Form input
+const sportName = ref('')
+const sports = ref([])
+
+// Database olahraga lokal
+const sportDatabase = {
+  Anggar: {
+    image: 'https://image/anggar.jpg',
+    review: 'Anggar adalah olahraga duel menggunakan pedang. Mengandalkan kecepatan, strategi, dan ketepatan serangan.',
+  },
+  Handball: {
+    image: 'https://image/handball.jpg',
+    review: 'Handball adalah permainan cepat yang menggabungkan unsur basket dan sepak bola, dimainkan dengan tangan.',
+  },
+  Sumo: {
+    image: 'https://image/sumo.jpg',
+    review: 'Sumo adalah olahraga tradisional Jepang di mana dua pegulat mencoba mendorong lawan keluar dari ring.',
+  },
+  Baseball: {
+    image: 'https://image/baseball.jpg',
+    review: 'Baseball adalah olahraga strategi yang populer di AS dan Jepang, dimainkan dengan memukul bola dan mencetak skor.',
+  },
+  Angkatbesi: {
+    image: 'https://image/angkatbesi.jpg',
+    review: 'Angkat Besi adalah olahraga kekuatan yang menguji kemampuan atlet dalam mengangkat beban berat dengan dua gaya utama: snatch dan clean & jerk.',
+  },
+}
+
+// Tambahkan berdasarkan input nama
+function addSport() {
+  const name = sportName.value.trim()
+  const data = sportDatabase[name]
+
+  if (data) {
+    // Gantikan seluruh isi list dengan 1 data baru
+    sports.value = [{
+      name,
+      image: data.image,
+      review: data.review,
+    }]
+    sportName.value = ''
+  } else {
+    alert('Data untuk olahraga tersebut tidak ditemukan.')
+  }
+}
+</script>
 
 <style scoped>
-.about-container {
-  padding: 20px;
-  background-color: #e5e7eb;
-  text-align: center;
-}
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
 </style>
