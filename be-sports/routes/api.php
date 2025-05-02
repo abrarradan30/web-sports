@@ -15,9 +15,6 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::apiResource('/galeri', GaleriController::class);
-Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit']);
-Route::put('/galeri/{id}', [GaleriController::class, 'update']);
-Route::delete('/galeri/{id}', [GaleriController::class, 'destroy']);
 
 Route::apiResource('kategori-olahraga', KategoriOlahragaController::class);
 
