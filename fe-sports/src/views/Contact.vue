@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="contact py-3    px-10 mt-0.5">
-    <h2 class="text-4xl font-bold text-center mb-4">
+    <h2 class="text-4xl font-bold text-center mb-4 text-[#1E3E62]">
       <span class="text-[#ff6500]">Kontak</span> Kami
     </h2>
     <p class="text-center max-w-xl mx-auto mb-8">
@@ -19,29 +19,29 @@
 
       <form action="" class="flex-1 p-12 text-center bg-[#fff4e6]">
         <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-user text-[#ff6500]  text-2xl mr-4"></i>
+          <i class="fas fa-user text-[#1E3E62]  text-2xl mr-4"></i>
           <input
             type="text"
             placeholder="Nama"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#ff6500] focus:outline-none"
+            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
           />
         </div>
 
         <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-envelope text-[#ff6500] text-2xl mr-4"></i>
+          <i class="fas fa-envelope text-[#1E3E62] text-2xl mr-4"></i>
           <input
             type="email"
             placeholder="Email"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#ff6500] focus:outline-none"
+            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
           />
         </div>
 
         <div class="flex items-center mt-8 border border-gray-300 pl-6 rounded-md">
-          <i class="fas fa-phone text-[#ff6500] text-2xl mr-4"></i>
+          <i class="fas fa-phone text-[#1E3E62] text-2xl mr-4"></i>
           <input
             type="text"
             placeholder="No HP"
-            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#ff6500] focus:outline-none"
+            class="w-full p-4 text-[1.2rem] bg-transparent font-bold text-[#1E3E62] focus:outline-none"
           />
         </div>
 

@@ -1,4 +1,4 @@
-<template>
+<template class="border-4">
   <div>
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center h-[80vh]" style="background-image: url('/images/hero.jpg')">

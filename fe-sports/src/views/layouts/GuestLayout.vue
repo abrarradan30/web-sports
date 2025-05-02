@@ -1,80 +1,68 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <!-- Navbar -->
-    <header class="bg-[#FF6500] text-white p-4 flex items-center justify-between shadow-md relative">
-      <!-- Logo / Title -->
-      <h1 class="flex items-center">
-        <img src="@/image/logo (2).png" alt="SportHub Logo" class="h-14 max-h-20 object-contain" />
-      </h1>
-
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex space-x-6 text-lg font-medium text-white relative justify-center">
-        <RouterLink to="/" class="hover:text-[#1E3A8A] transition duration-300 ease-in-out">Dashboard</RouterLink>
-        <RouterLink to="/berita" class="hover:text-[#1E3A8A] transition duration-300 ease-in-out">Berita</RouterLink>
-
-        <!-- Mega Menu -->
-        <div class="relative group">
-          <span class="cursor-pointer hover:text-[#1E3A8A] transition duration-300 ease-in-out">
-            Kategori
-          </span>
-          <div class="fixed left-0 right-0 top-[80px] bg-[#FF6500] text-white drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
-            <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
-              <!-- Kategori 1 -->
-              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
-                <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-bold text-base">Anggar</span>
-              </div>
-
-              <!-- Kategori 2 -->
-              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
-                <img src="@/image/handball.jpg" alt="Handball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-bold text-base">Handball</span>
-              </div>
-
-              <!-- Kategori 3 -->
-              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
-                <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-bold text-base">Baseball</span>
-              </div>
-
-              <!-- Kategori 4 -->
-              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
-                <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-bold text-base">Angkat Besi</span>
-              </div>
-
-              <!-- Kategori 5 -->
-              <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
-                <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
-                <span class="font-bold text-base">Sumo</span>
-              </div>
-            </div>
+    <header class="fixed w-full top-0 z-50 bg-[#f8f6f5] text-[#001233] py-5 px-6 flex items-center justify-between ">
+  <!-- Logo -->
+  <div class="flex items-center">
+    <img src="@/image/logo (2).png" alt="Logo" class="h-12 object-contain" />
+  </div>
+  <!-- Navigation -->
+  <nav class="hidden md:flex space-x-10 text-lg font-semibold">
+    <RouterLink to="/" class="hover:text-[#ff6500] transition">Dashboard</RouterLink>
+    <RouterLink to="/berita" class="hover:text-[#ff6500] transition">Berita</RouterLink>
+    <!-- Mega Menu -->
+    <div class="relative group">  
+      <span class="cursor-pointer hover:text-[#ff6500] transition duration-300 ease-in-out">
+        Olahraga
+      </span>
+      <div class="fixed left-0 right-0 top-[85px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+        <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
+          <!-- Kategori 1 -->
+          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+            <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+            <span class="font-bold text-base">Anggar</span>
+          </div>
+          <!-- Kategori 2 -->
+          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+            <img src="@/image/handball.jpg" alt="Handball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+            <span class="font-bold text-base">Handball</span>
+          </div>
+          <!-- Kategori 3 -->
+          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+            <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+            <span class="font-bold text-base">Baseball</span>
+          </div>
+          <!-- Kategori 4 -->
+          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+            <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+            <span class="font-bold text-base">Angkat Besi</span>
+          </div>
+          <!-- Kategori 5 -->
+          <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
+            <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+            <span class="font-bold text-base">Sumo</span>
           </div>
         </div>
+      </div>
+    </div>
 
-        <RouterLink to="/product" class="hover:text-[#1E3A8A] transition duration-300 ease-in-out">Product</RouterLink>
-        <RouterLink to="/galeri" class="hover:text-[#1E3A8A] transition duration-300 ease-in-out">Galeri</RouterLink>
-        <RouterLink to="/contact" class="hover:text-[#1E3A8A] transition duration-300 ease-in-out">Contact</RouterLink>
-      </nav>
+    <RouterLink to="/contact" class="hover:text-[#ff6500] transition">Contact</RouterLink>
+  </nav>
 
-      <!-- Tombol Logout -->
-      <router-link
-        to="/login"
-        class="hidden md:flex items-center justify-center hover:opacity-80 transition duration-300 ease-in-out text-white text-xl"
-      >
-        <i class="fa-solid fa-right-to-bracket"></i>
-      </router-link>
+  <!-- Login Button -->
+  <router-link to="/login" class="hidden md:flex items-center text-[#001233] text-2xl hover:opacity-80 transition">
+    <i class="fa-solid fa-user-circle"></i>
+  </router-link>
 
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden text-white focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </header>
+  <!-- Mobile Menu Icon -->
+  <button class="md:hidden text-[#001233] focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+</header>
 
     <!-- Main Content -->
-    <main class="flex-grow bg-gray-100 p-6">
+    <main class="flex-grow bg-gray-100 p-6 pt-28">
       <RouterView />
     </main>
 
@@ -96,10 +84,8 @@
       <ul class="space-y-2 text-sm text-gray-300">
         <li><a href="/" class="hover:text-white">Dashboard</a></li>
         <li><a href="/berita" class="hover:text-white">Berita</a></li>
-        <li><a href="/kategori" class="hover:text-white">Kategori</a></li>
-        <li><a href="/product" class="hover:text-white">Product</a></li>
-        <li><a href="/galeri" class="hover:text-white">Galeri</a></li>
-        <li><a href="/contact" class="hover:text-white">Contact</a></li>
+        <li><a href="/olahraga" class="hover:text-white">Olahraga</a></li>
+        <li><a href="/contact" class="hover:text-white">Riview</a></li>
       </ul>
     </div>
 
