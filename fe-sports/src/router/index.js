@@ -19,12 +19,8 @@ import Dashboard from '@/views/Dashboard.vue'
 import Berita from '@/views/Berita.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
-import Contact from '@/views/Contact.vue'
-import Anggar from '@/views/Anggar.vue'
-import Handball from '@/views/Handball.vue'
-import Baseball from '@/views/Baseball.vue'
-import Angkatbesi from '@/views/Angkatbesi.vue'
-import Sumo from '@/views/Sumo.vue'
+import Riview from '@/views/Riview.vue'
+
 const routes = [
   // Guest
   {
@@ -53,9 +49,9 @@ const routes = [
         component: Galeri,
       },
       {
-        path: '/contact',
-        name: 'Contact',
-        component: Contact,
+        path: '/riview',
+        name: 'Riview',
+        component: Riview,
       },
       {
         path: '/anggar',

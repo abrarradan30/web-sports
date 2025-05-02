@@ -12,8 +12,8 @@ class KategoriOlahraga extends Model
     protected $table = 'kategori_olahraga';
 
     protected $fillable = [
-        'nama_olahraga',
-        'deskripsi',
+        'name',
+        'description'
     ];
 
 }

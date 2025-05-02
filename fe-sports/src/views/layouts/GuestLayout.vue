@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <RouterLink to="/contact" class="hover:text-[#ff6500] transition">Contact</RouterLink>
+    <RouterLink to="/riview" class="hover:text-[#ff6500] transition">Riview</RouterLink>
   </nav>
 
   <!-- Login Button -->
@@ -85,7 +85,7 @@
         <li><a href="/" class="hover:text-white">Dashboard</a></li>
         <li><a href="/berita" class="hover:text-white">Berita</a></li>
         <li><a href="/olahraga" class="hover:text-white">Olahraga</a></li>
-        <li><a href="/contact" class="hover:text-white">Riview</a></li>
+        <li><a href="/riview" class="hover:text-white">Riview</a></li>
       </ul>
     </div>
 
