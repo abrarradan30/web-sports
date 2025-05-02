@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\GaleriController;
 use App\Http\Controllers\Api\KategoriOlahragaController;
-use App\Http\Controllers\Api\ProdukOlahragaController;
+use App\Http\Controllers\Api\ProdukController;
 use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\KontakController;
 
@@ -18,7 +18,7 @@ Route::apiResource('/galeri', GaleriController::class);
 
 Route::apiResource('kategori-olahraga', KategoriOlahragaController::class);
 
-Route::apiResource('produk-olahraga', ProdukOlahragaController::class);
+Route::apiResource('produk-olahraga', ProdukController::class);
 
 Route::apiResource('berita', BeritaController::class);
 
