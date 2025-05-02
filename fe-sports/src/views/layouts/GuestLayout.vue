@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <header  class="fixed w-full top-0 z-50 bg-[#f8f6f5] text-[#001233] py-3 px-6 flex items-center justify-between">
+    <header  class="fixed w-full top-0 z-50 bg-[#f8f6f5] text-[#001233] py-3 px-6 flex items-center justify-between shadow-md">
   <!-- Logo -->
   <div class="flex items-center">
     <img src="@/image/logo (2).png" alt="Logo" class="h-10 object-contain" />
@@ -14,29 +14,29 @@
       <span class="cursor-pointer hover:text-[#ff6500] transition duration-300 ease-in-out">
         Olahraga
       </span>
-      <div class="fixed left-0 right-0 top-[73px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+      <div class="fixed left-0 right-0 top-[50px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
         <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
-          <!-- Kategori 1 -->
+          <!-- Olahraga 1 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Anggar</span>
           </div>
-          <!-- Kategori 2 -->
+          <!-- Olahraga 2 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/handball.jpg" alt="Handball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Handball</span>
           </div>
-          <!-- Kategori 3 -->
+          <!-- Olahraga 3 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Baseball</span>
           </div>
-          <!-- Kategori 4 -->
+          <!-- Olahraga 4 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Angkat Besi</span>
           </div>
-          <!-- Kategori 5 -->
+          <!-- Olahraga 5 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
             <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
             <span class="font-bold text-base">Sumo</span>
