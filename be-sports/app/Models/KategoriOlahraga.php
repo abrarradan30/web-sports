@@ -15,4 +15,5 @@ class KategoriOlahraga extends Model
         'nama_olahraga',
         'deskripsi',
     ];
+
 }

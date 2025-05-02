@@ -1,4 +1,4 @@
-<template>
+<template class="border-4">
   <div>
 
     <!-- Hero Section -->
