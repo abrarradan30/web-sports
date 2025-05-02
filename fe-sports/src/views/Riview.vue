@@ -30,7 +30,7 @@
         <img
           :src="sport.image"
           :alt="sport.name"
-          class="w-full h-48 object-cover rounded-md mb-4"
+          class="w-full h-auto object-cover rounded-md mb-4"
         />
         <h4 class="text-lg font-semibold text-orange-500">{{ sport.name }}</h4>
         <p class="text-gray-700 text-sm mt-1">{{ sport.review }}</p>
@@ -49,26 +49,27 @@ const sports = ref([])
 // Database olahraga lokal
 const sportDatabase = {
   Anggar: {
-    image: 'https://image/anggar.jpg',
-    review: 'Anggar adalah olahraga duel menggunakan pedang. Mengandalkan kecepatan, strategi, dan ketepatan serangan.',
+    image: '/image/anggar.jpg',
+    review: 'Anggar adalah olahraga duel menggunakan pedang...',
   },
   Handball: {
-    image: 'https://image/handball.jpg',
-    review: 'Handball adalah permainan cepat yang menggabungkan unsur basket dan sepak bola, dimainkan dengan tangan.',
+    image: '/image/handball.jpg',
+    review: 'Handball adalah permainan cepat...',
   },
   Sumo: {
-    image: 'https://image/sumo.jpg',
-    review: 'Sumo adalah olahraga tradisional Jepang di mana dua pegulat mencoba mendorong lawan keluar dari ring.',
+    image: '/image/sumo.jpg',
+    review: 'Sumo adalah olahraga tradisional Jepang...',
   },
   Baseball: {
-    image: 'https://image/baseball.jpg',
-    review: 'Baseball adalah olahraga strategi yang populer di AS dan Jepang, dimainkan dengan memukul bola dan mencetak skor.',
+    image: '/image/baseball.jpg',
+    review: 'Baseball adalah olahraga strategi...',
   },
   Angkatbesi: {
-    image: 'https://image/angkatbesi.jpg',
-    review: 'Angkat Besi adalah olahraga kekuatan yang menguji kemampuan atlet dalam mengangkat beban berat dengan dua gaya utama: snatch dan clean & jerk.',
+    image: '/image/angkatbesi.jpg',
+    review: 'Angkat Besi adalah olahraga kekuatan...',
   },
 }
+
 
 // Tambahkan berdasarkan input nama
 function addSport() {
