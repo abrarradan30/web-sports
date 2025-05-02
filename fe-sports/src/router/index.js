@@ -20,6 +20,11 @@ import Berita from '@/views/Berita.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
 import Riview from '@/views/Riview.vue'
+import Anggar from '@/views/Anggar.vue'
+import Handball from '@/views/Handball.vue'
+import Baseball from '@/views/Baseball.vue'
+import Angkatbesi from '@/views/Angkatbesi.vue'
+import Sumo from '@/views/Sumo.vue'
 
 const routes = [
   // Guest
