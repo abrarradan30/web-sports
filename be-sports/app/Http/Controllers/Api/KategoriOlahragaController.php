@@ -8,7 +8,7 @@ use App\Models\KategoriOlahraga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class KategoriController extends Controller
+class KategoriOlahragaController extends Controller
 {
     //kirim semua data
     public function index()
