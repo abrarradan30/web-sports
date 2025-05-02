@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <header class="fixed w-full top-0 z-50 bg-[#f8f6f5] text-[#001233] py-5 px-6 flex items-center justify-between ">
+    <header  class="fixed w-full top-0 z-50 bg-[#f8f6f5] text-[#001233] py-3 px-6 flex items-center justify-between">
   <!-- Logo -->
   <div class="flex items-center">
-    <img src="@/image/logo (2).png" alt="Logo" class="h-12 object-contain" />
+    <img src="@/image/logo (2).png" alt="Logo" class="h-10 object-contain" />
   </div>
   <!-- Navigation -->
-  <nav class="hidden md:flex space-x-10 text-lg font-semibold">
+  <nav class="hidden md:flex space-x-10 text-base font-semibold">
     <RouterLink to="/" class="hover:text-[#ff6500] transition">Dashboard</RouterLink>
     <RouterLink to="/berita" class="hover:text-[#ff6500] transition">Berita</RouterLink>
     <!-- Mega Menu -->
@@ -14,7 +14,7 @@
       <span class="cursor-pointer hover:text-[#ff6500] transition duration-300 ease-in-out">
         Olahraga
       </span>
-      <div class="fixed left-0 right-0 top-[85px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+      <div class="fixed left-0 right-0 top-[73px] bg-white text-black drop-shadow-md shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
         <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
           <!-- Kategori 1 -->
           <div class="text-center hover:scale-105 transition-transform duration-300 cursor-default">
@@ -62,7 +62,7 @@
 </header>
 
     <!-- Main Content -->
-    <main class="flex-grow bg-gray-100 p-6 pt-28">
+    <main class=" bg-gray-100 pt-16">
       <RouterView />
     </main>
 
