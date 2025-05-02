@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
-class ProdukController extends Controller
+class ProdukOlahragaController extends Controller
 {
     // Ambil semua data produk
     public function index()
