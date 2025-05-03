@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kontak', function (Blueprint $table) {
+        Schema::create('jenis_olahraga', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('email');
-            $table->text('pesan')->nullable();
-            $table->date('tgl_kirim');
+            $table->string('nama_olahraga');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kontak');
+        Schema::dropIfExists('jenis_olahraga');
     }
 };
