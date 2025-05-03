@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -30,7 +31,7 @@ class BeritaController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'gambar_sampul' => 'required|string',
+            'gambar_sampul' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tgl_dibuat' => 'required|date',
         ]);
 
@@ -42,7 +43,16 @@ class BeritaController extends Controller
             ], 422);
         }
 
-        $berita = Berita::create($request->all());
+        // Upload gambar
+        $gambar = $request->file('gambar_sampul');
+        $gambar->storeAs('public/berita', $gambar->hashName());
+
+        $berita = Berita::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'gambar_sampul' => $gambar->hashName(),
+            'tgl_dibuat' => $request->tgl_dibuat,
+        ]);
 
         return response()->json([
             'success' => true,
@@ -89,7 +99,7 @@ class BeritaController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'gambar_sampul' => 'required|string',
+            'gambar_sampul' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tgl_dibuat' => 'required|date',
         ]);
 
@@ -101,7 +111,23 @@ class BeritaController extends Controller
             ], 422);
         }
 
-        $berita->update($request->all());
+        // Cek apakah ada file gambar baru
+        if ($request->hasFile('gambar_sampul')) {
+            // Hapus gambar lama
+            Storage::delete('public/berita/' . basename($berita->gambar_sampul));
+            
+            // Upload gambar baru
+            $gambar = $request->file('gambar_sampul');
+            $gambar->storeAs('public/berita', $gambar->hashName());
+            
+            $berita->gambar_sampul = $gambar->hashName();
+        }
+
+        $berita->update([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tgl_dibuat' => $request->tgl_dibuat,
+        ]);
 
         return response()->json([
             'success' => true,

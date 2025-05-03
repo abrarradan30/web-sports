@@ -6,7 +6,6 @@ use App\Http\Controllers\Api\GaleriController;
 use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\ProdukController;
 use App\Http\Controllers\Api\BeritaController;
-use App\Http\Controllers\Api\KontakController;
 
 Route::post('/login', [UsersController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
@@ -21,6 +20,4 @@ Route::apiResource('kategori-olahraga', KategoriController::class);
 Route::apiResource('produk-olahraga', ProdukController::class);
 
 Route::apiResource('berita', BeritaController::class);
-
-Route::apiResource('kontak', KontakController::class);
 

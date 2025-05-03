@@ -22,7 +22,7 @@ class Berita extends Model
     protected function gambarSampul(): Attribute
     {
         return Attribute::make(
-            get: fn ($gambar_sampul) => url('/storage/berita/' . $$gambar_sampul),
+            get: fn ($gambar_sampul) => url('/storage/berita/' . $gambar_sampul),
         );
     }
 }
