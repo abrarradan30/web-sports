@@ -17,10 +17,14 @@ import ContactAdmin from '@/views/admin/ContactAdmin.vue'
 import GuestLayout from '@/views/layouts/GuestLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Berita from '@/views/Berita.vue'
-import Olahraga from '@/views/Olahraga.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
-import Contact from '@/views/Contact.vue'
+import Riview from '@/views/Riview.vue'
+import Anggar from '@/views/Anggar.vue'
+import Handball from '@/views/Handball.vue'
+import Baseball from '@/views/Baseball.vue'
+import Angkatbesi from '@/views/Angkatbesi.vue'
+import Sumo from '@/views/Sumo.vue'
 
 const routes = [
   // Guest
@@ -40,11 +44,6 @@ const routes = [
         component: Berita,
       },
       {
-        path: '/olahraga',
-        name: 'Olahraga',
-        component: Olahraga,
-      },
-      {
         path: '/product',
         name: 'Product',
         component: Product,
@@ -55,9 +54,34 @@ const routes = [
         component: Galeri,
       },
       {
-        path: '/contact',
-        name: 'Contact',
-        component: Contact,
+        path: '/riview',
+        name: 'Riview',
+        component: Riview,
+      },
+      {
+        path: '/anggar',
+        name: 'Anggar',
+        component: Anggar,
+      },
+      {
+        path: '/handball',
+        name: 'Handball',
+        component: Handball,
+      },
+      {
+        path: '/baseball',
+        name: 'Baseball',
+        component: Baseball,
+      },
+      {
+        path: '/angkatbesi',
+        name: 'Angkatbesi',
+        component: Angkatbesi,
+      },
+      {
+        path: '/sumo',
+        name: 'Sumo',
+        component: Sumo,
       },
     ],
   },
