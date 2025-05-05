@@ -3,7 +3,7 @@
     <!-- Konten utama -->
     <div class="lg:col-span-2 space-y-10 mobile-space">
       <!-- Post 1 -->
-      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
+      <a href="https://www.antaranews.com/berita/4806553/46-negara-ramaikan-kejuaraan-anggar-senior-asia-2025-di-bali" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
         <img
           src="@/image/anggarr.avif"
           class="w-full h-70 object-cover"
@@ -19,7 +19,7 @@
       </a>
 
       <!-- Post 2 -->
-      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
+      <a href="https://www.ajnn.net/news/putri-aceh-wakili-indonesia-pada-kejuaraan-angkat-besi-asia-2025-di-china/index.html" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/angkatbesi.jpg"
           class="w-full h-70 object-cover"
@@ -34,7 +34,7 @@
         </div>
       </a>
 
-      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
+      <a href="https://www.liputan6.com/global/read/5427654/khawatir-kelebihan-beban-bawa-27-pesumo-berbobot-100-kg-lebih-japan-airlines-terpaksa-tambah-pesawat" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/gemoy.avif"
           class="w-full h-70 object-cover"
@@ -49,7 +49,7 @@
         </div>
       </a>
 
-      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
+      <a href="https://id.wikipedia.org/wiki/Bola_tangan" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/HANDBALLL.avif"
           class="w-full h-70 object-cover"
@@ -64,7 +64,7 @@
         </div>
       </a>
 
-      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
+      <a href="https://id.wikipedia.org/wiki/Bisbol" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/BASEBALLL.avif"
           class="w-full h-70 object-cover"
@@ -129,7 +129,7 @@
       alt="Workout"
       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
     />
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute top-2 right-2">
       <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
         BASKET
       </div>
@@ -144,7 +144,7 @@
       alt="Workout"
       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
     />
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute top-2 right-2">
       <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
         BADMINTON
       </div>
@@ -159,7 +159,7 @@
       alt="Workout"
       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
     />
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute top-2 right-2">
       <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
         YOGA
       </div>
