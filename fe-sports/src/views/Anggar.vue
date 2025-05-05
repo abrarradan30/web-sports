@@ -29,7 +29,7 @@
       <!-- Gambar di Tengah -->
       <div class="mb-6 flex justify-center">
         <div class="aspect-video w-full max-w-xl rounded-lg bg-gray-300 overflow-hidden">
-  <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-full object-cover rounded-md shadow-md" />
+  <img src="@/image/anggar2.jpg" alt="Anggar" class="w-full h-full object-cover rounded-md shadow-md" />
 </div>
       </div>
 

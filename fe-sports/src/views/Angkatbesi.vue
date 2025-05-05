@@ -19,7 +19,7 @@
 
       <div class="mb-6 flex justify-center">
         <div class="aspect-video w-full max-w-xl rounded-lg overflow-hidden">
-          <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-full object-cover rounded-md shadow-md" />
+          <img src="@/image/besi2.jpg" alt="Angkat Besi" class="w-full h-full object-cover rounded-md shadow-md" />
         </div>
       </div>
 
@@ -49,3 +49,5 @@
     </div>
   </div>
 </template>
+
+itu kodingan full nya

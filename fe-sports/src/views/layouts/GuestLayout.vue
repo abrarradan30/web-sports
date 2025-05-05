@@ -20,7 +20,7 @@
             class="fixed left-0 right-0 top-[50px] bg-white text-black drop-shadow-md shadow-xl opacity-100 visible transition-all duration-300 z-50">
             <div class="max-w-screen-xl mx-auto px-9 py-10 grid grid-cols-5 gap-8">
               <RouterLink to="/anggar" class="text-center hover:scale-105 transition-transform duration-300 cursor-default" @click="hideDropdown">
-                <img src="@/image/anggar.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <img src="@/image/anggar1.jpg" alt="Anggar" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
                 <span class="font-bold text-base">Anggar</span>
               </RouterLink>
               <RouterLink to="/handball" class="text-center hover:scale-105 transition-transform duration-300 cursor-default" @click="hideDropdown">
@@ -28,15 +28,15 @@
                 <span class="font-bold text-base">Handball</span>
               </RouterLink>
               <RouterLink to="/baseball" class="text-center hover:scale-105 transition-transform duration-300 cursor-default" @click="hideDropdown">
-                <img src="@/image/baseball.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <img src="@/image/baseball1.jpg" alt="Baseball" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
                 <span class="font-bold text-base">Baseball</span>
               </RouterLink>
               <RouterLink to="/angkatbesi" class="text-center hover:scale-105 transition-transform duration-300 cursor-default" @click="hideDropdown">
-                <img src="@/image/angkatbesi.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <img src="@/image/besi1.jpg" alt="Angkat Besi" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
                 <span class="font-bold text-base">Angkat Besi</span>
               </RouterLink>
               <RouterLink to="/sumo" class="text-center hover:scale-105 transition-transform duration-300 cursor-default" @click="hideDropdown">
-                <img src="@/image/sumo.jpg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
+                <img src="@/image/sumo2.jpeg" alt="Sumo" class="w-full h-44 object-cover rounded-md mb-2 shadow-md" />
                 <span class="font-bold text-base">Sumo</span>
               </RouterLink>
             </div>

@@ -19,7 +19,7 @@
 
       <div class="mb-6 flex justify-center">
         <div class="aspect-video w-full max-w-xl rounded-lg overflow-hidden">
-          <img src="@/image/handball.jpg" alt="Handball" class="w-full h-full object-cover rounded-md shadow-md" />
+          <img src="@/image/handball2.jpg" alt="Handball" class="w-full h-full object-cover rounded-md shadow-md" />
         </div>
       </div>
 
