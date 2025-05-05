@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-8">
+  <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
     <!-- Konten utama -->
-    <div class="lg:col-span-2 space-y-10">
+    <div class="lg:col-span-2 space-y-10 mobile-space">
       <!-- Post 1 -->
       <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
         <img
@@ -9,7 +9,7 @@
           class="w-full h-70 object-cover"
         />
         <div>
-          <span class="text-xs bg-orange-500 text-white px-2 py-1 rounded">ANGGAR</span>
+          <span class="text-xs bg-orange-500 text-white px-2 py-1 ">ANGGAR</span>
           <h2 class="text-xl font-bold mt-2">Kejuaraan Anggar Senior Asia 2025 Di Bali Diramaikan 46 Negara</h2>
           <p class="text-sm text-gray-600 mt-2">
             Peserta kejuaraan Anggar Senior Asia 2025 yang digelar di Nusa Dua, Bali, pada 17-23 juni, mengalami lonjakan signifinkan.
@@ -19,13 +19,13 @@
       </a>
 
       <!-- Post 2 -->
-      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
+      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/angkatbesi.jpg"
           class="w-full h-70 object-cover"
         />
         <div>
-          <span class="text-xs bg-orange-500 text-white px-2 py-1 rounded">ANGKAT BESI</span>
+          <span class="text-xs bg-orange-500 text-white px-2 py-1 ">ANGKAT BESI</span>
           <h2 class="text-xl font-bold mt-2">Putri Aceh Wakili Indonesia pada Kejuruan Angkat Besi Asia 2025 di China</h2>
           <p class="text-sm text-gray-600 mt-2">
             Atlet angkat besi asal Aceh, Nadita Aprilia bakal berlomba di ajang Asian Weightlifting Championship 2025 yang akan digelar di China
@@ -34,13 +34,13 @@
         </div>
       </a>
 
-      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
+      <a href="https://www.fwd.co.id/id/fwdmax/passionstory-sport/6-olahraga-terbaik-untuk-kesehatan-mental/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/gemoy.avif"
           class="w-full h-70 object-cover"
         />
         <div>
-          <span class="text-xs bg-orange-500 text-white px-2 py-1 rounded">SUMO</span>
+          <span class="text-xs bg-orange-500 text-white px-2 py-1 ">SUMO</span>
           <h2 class="text-xl font-bold mt-2">Khawatir Kelebihan Beban Bawa 27 Pesumo Berbobot 100 Kg Lebih, Japan Airlines Terpaksa Tambah Pesawat</h2>
           <p class="text-sm text-gray-600 mt-2">
             Para atlet sumo tersebut memiliki berat hingga 120 kilogram, jauh lebih berat dari rata-rata penumpang yakni 70 kilogram. Maskapai Japan Airlines khawatir pesawat mereka kelebihan beban, sehingga memutuskan membagi rombongan pesumo tersebut.
@@ -49,13 +49,13 @@
         </div>
       </a>
 
-      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
+      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/HANDBALLL.avif"
           class="w-full h-70 object-cover"
         />
         <div>
-          <span class="text-xs bg-orange-500 text-white px-2 py-1 rounded">HANDBALL</span>
+          <span class="text-xs bg-orange-500 text-white px-2 py-1 ">HANDBALL</span>
           <h2 class="text-xl font-bold mt-2">Bola tangan, olahraga bola besar yang mengandalkan operan tangan dan strategi tim untuk menembus gawang lawan.</h2>
           <p class="text-sm text-gray-600 mt-2">
             Bola tangan dimainkan dua tim berisi tujuh orang dalam satu kelompok. Enam orang adalah pemain yang bergerak bebas di lapangan dan sisanya sebagai kiper. Lapangan bola tangan berukuran panjang 90 sampai dengan 110 meter dan lebar 55 sampai dengan 65 meter.
@@ -64,17 +64,17 @@
         </div>
       </a>
 
-      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit">
+      <a href="https://hellosehat.com/kebugaran/kardio/rekomendasi-sepatu-running-terbaik/" target="_blank" rel="noopener noreferrer" class="grid md:grid-cols-2 gap-6 no-underline text-inherit mobile-grid">
         <img
           src="@/image/BASEBALLL.avif"
           class="w-full h-70 object-cover"
         />
         <div>
-          <span class="text-xs bg-orange-500 text-white px-2 py-1 rounded">BASEBALL</span>
+          <span class="text-xs bg-orange-500 text-white px-2 py-1 ">BASEBALL</span>
           <h2 class="text-xl font-bold mt-2">Bisbol (bahasa Inggris: baseball) atau bola pangkalan adalah olahraga yang dimainkan dua tim.</h2>
           <p class="text-sm text-gray-600 mt-2">
             Olahraga ini mirip dengan permainan bola kasti. Pelempar (pitcher) dari tim yang melempar berusaha melempar bola yang disebut bola bisbol, sedangkan pemain (batter) dari tim yang memukul berusaha memukul bola dengan menggunakan tongkat pemukul (bat).
-          </p>
+          </p> 
           <p class="text-xs text-gray-400 mt-2">Selasa, 06 Agustus 2024 </p>
         </div>
       </a>
@@ -82,7 +82,7 @@
     </div>
 
     <!-- Sidebar -->
-    <div>
+    <div class="sticky top-10 h-fit self-start">
       <h3 class="text-lg font-semibold mb-4 border-b pb-2">Popular Post</h3>
 
       <!-- Popular 1 -->
@@ -92,7 +92,7 @@
           class="w-14 h-14 rounded-md object-cover"
         />
         <div>
-          <p class="text-sm font-medium">Manfaat Jogging Setiap Hari</p>
+          <p class="text-sm ">Manfaat Jogging Setiap Hari</p>
           <p class="text-xs text-gray-500">9 Maret 2021</p>
         </div>
       </a>
@@ -104,7 +104,7 @@
           class="w-14 h-14 rounded-md object-cover"
         />
         <div>
-          <p class="text-sm font-medium">6 Olahraga Untuk Wanita Karir</p>
+          <p class="text-sm ">6 Olahraga Untuk Wanita Karir</p>
           <p class="text-xs text-gray-500">11 November 2020</p>
         </div>
       </a>
@@ -116,10 +116,58 @@
           class="w-14 h-14 rounded-md object-cover"
         />
         <div>
-          <p class="text-sm font-medium">3 Tips Aman Bersepeda</p>
+          <p class="text-sm ">3 Tips Aman Bersepeda</p>
           <p class="text-xs text-gray-500">6 November 2020</p>
         </div>
       </a>
+
+      <!-- gambar populer -->
+      <a href="berita" class="block w-64 mb-4">
+  <div class="relative h-36  overflow-hidden shadow-md group transition duration-300 hover:brightness-75">
+    <img
+      src="@/image/basket.avif"
+      alt="Workout"
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
+        BASKET
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="berita" class="block w-64 mb-4">
+  <div class="relative h-36  overflow-hidden shadow-md group transition duration-300 hover:brightness-75">
+    <img
+      src="@/image/badminton.avif"
+      alt="Workout"
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
+        BADMINTON
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="berita" class="block w-64 mb-4">
+  <div class="relative h-36  overflow-hidden shadow-md group transition duration-300 hover:brightness-75">
+    <img
+      src="@/image/yoga.avif"
+      alt="Workout"
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-orange-500 text-white text-sm px-3 py-0.5 shadow-md">
+        YOGA
+      </div>
+    </div>
+  </div>
+</a>
+
+
     </div>
   </div>
 </template>
@@ -129,5 +177,14 @@
   padding: 20px;
   background-color: #e5e7eb;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mobile-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .mobile-space > a {
+    margin-bottom: 1.5rem;
+  }
 }
 </style>
