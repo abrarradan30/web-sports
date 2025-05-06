@@ -5,7 +5,11 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+<<<<<<< HEAD
 class ReviewResource extends JsonResource
+=======
+class GaleriResource extends JsonResource
+>>>>>>> bff8b2e3290e9841cf2b540a4d68247efae57636
 {
     //define properti
     public $status;
