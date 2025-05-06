@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\Api\GaleriController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\JenisOlahragaController;
 
 // route untuk user
 Route::post('/login', [UsersController::class, 'login']);
@@ -18,3 +19,4 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::apiResource('/galeri', GaleriController::class);
 // route review
 Route::apiResource('/review', ReviewController::class);
+Route::apiResource('/Olahraga', App\Http\Controllers\Api\JenisOlahragaController::class);
