@@ -14,15 +14,15 @@ class Berita extends Model
 
     protected $fillable = [
         'judul',
-        'deskripsi',
-        'gambar_sampul',
-        'tgl_dibuat',
+        'konten',
+        'gambar',
+        'tanggal',
     ];
 
-    protected function gambarSampul(): Attribute
+    protected function gambar(): Attribute
     {
         return Attribute::make(
-            get: fn ($gambar_sampul) => url('/storage/berita/' . $$gambar_sampul),
+            get: fn ($gambar) => $gambar ? url('/storage/berita/' . $gambar) : null,
         );
     }
 }

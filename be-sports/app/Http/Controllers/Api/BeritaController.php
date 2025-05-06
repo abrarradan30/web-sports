@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -27,28 +28,58 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'judul' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'gambar_sampul' => 'required|string',
-            'tgl_dibuat' => 'required|date',
-        ]);
+        try {
+            $validator = Validator::make($request->all(), [
+                'judul' => 'required|string|max:255',
+                'konten' => 'required|string',
+                'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'tanggal' => 'required|date',
+            ]);
 
-        if ($validator->fails()) {
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validasi gagal',
+                    'errors' => $validator->errors()
+                ], 422);
+            }
+
+            // Upload gambar
+            $gambar = $request->file('gambar');
+            $gambarPath = $gambar->storeAs('public/berita', $gambar->hashName());
+
+            if (!$gambarPath) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Gagal mengupload gambar'
+                ], 500);
+            }
+
+            $berita = Berita::create([
+                'judul' => $request->judul,
+                'konten' => $request->konten,
+                'gambar' => $gambar->hashName(),
+                'tanggal' => $request->tanggal,
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Berita berhasil ditambahkan',
+                'data' => $berita
+            ], 201);
+
+        } catch (\Exception $e) {
+            // Hapus gambar jika terjadi error
+            if (isset($gambarPath)) {
+                Storage::delete($gambarPath);
+            }
+
             return response()->json([
                 'success' => false,
-                'message' => 'Validasi gagal',
-                'errors' => $validator->errors()
-            ], 422);
+                'message' => 'Terjadi kesalahan saat menambahkan berita',
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        $berita = Berita::create($request->all());
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Berita berhasil ditambahkan',
-            'data' => $berita
-        ], 201);
     }
 
     /**
@@ -88,9 +119,9 @@ class BeritaController extends Controller
 
         $validator = Validator::make($request->all(), [
             'judul' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'gambar_sampul' => 'required|string',
-            'tgl_dibuat' => 'required|date',
+            'konten' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'tanggal' => 'required|date',
         ]);
 
         if ($validator->fails()) {
@@ -101,7 +132,27 @@ class BeritaController extends Controller
             ], 422);
         }
 
-        $berita->update($request->all());
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama
+            Storage::delete('public/berita/' . $berita->gambar);
+            
+            // Upload gambar baru
+            $gambar = $request->file('gambar');
+            $gambar->storeAs('public/berita', $gambar->hashName());
+            
+            $berita->update([
+                'judul' => $request->judul,
+                'konten' => $request->konten,
+                'gambar' => $gambar->hashName(),
+                'tanggal' => $request->tanggal,
+            ]);
+        } else {
+            $berita->update([
+                'judul' => $request->judul,
+                'konten' => $request->konten,
+                'tanggal' => $request->tanggal,
+            ]);
+        }
 
         return response()->json([
             'success' => true,
@@ -123,6 +174,9 @@ class BeritaController extends Controller
                 'message' => 'Berita tidak ditemukan'
             ], 404);
         }
+
+        // Hapus gambar
+        Storage::delete('public/berita/' . $berita->gambar);
 
         $berita->delete();
 
