@@ -19,7 +19,7 @@ import Dashboard from '@/views/Dashboard.vue'
 import Berita from '@/views/Berita.vue'
 import Product from '@/views/Product.vue'
 import Galeri from '@/views/Galeri.vue'
-import Riview from '@/views/Riview.vue'
+import Review from '@/views/Review.vue'
 import Anggar from '@/views/Anggar.vue'
 import Handball from '@/views/Handball.vue'
 import Baseball from '@/views/Baseball.vue'
@@ -54,9 +54,9 @@ const routes = [
         component: Galeri,
       },
       {
-        path: '/riview',
-        name: 'Riview',
-        component: Riview,
+        path: '/review',
+        name: 'Review',
+        component: Review,
       },
       {
         path: '/anggar',

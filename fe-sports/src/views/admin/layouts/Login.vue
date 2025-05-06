@@ -13,6 +13,7 @@
       <div class="form-container sign-in">
         <form @submit.prevent="login">
           <h1>Sign In</h1>
+          <!-- penerapan icon -->
           <!-- <div class="social-icons">
             <a
               href="#"

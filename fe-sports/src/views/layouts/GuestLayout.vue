@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <RouterLink to="/riview" class="hover:text-[#ff6500] transition">Riview</RouterLink>
+        <RouterLink to="/review" class="hover:text-[#ff6500] transition">Review</RouterLink>
       </nav>
 
       <!-- Desktop Login Icon -->
@@ -91,7 +91,7 @@
         </div>
       </details>
 
-      <RouterLink to="/riview" class="block font-semibold hover:text-[#ff6500]" @click="toggleMobileMenu">Riview</RouterLink>
+      <RouterLink to="/review" class="block font-semibold hover:text-[#ff6500]" @click="toggleMobileMenu">Review</RouterLink>
       <RouterLink to="/login" class="block font-semibold hover:text-[#ff6500]" @click="toggleMobileMenu">Login</RouterLink>
     </div>
 
@@ -116,7 +116,7 @@
             <li><a href="/" class="hover:text-white">Dashboard</a></li>
             <li><a href="/berita" class="hover:text-white">Berita</a></li>
             <li><a href="/olahraga" class="hover:text-white">Olahraga</a></li>
-            <li><a href="/riview" class="hover:text-white">Riview</a></li>
+            <li><a href="/review" class="hover:text-white">Review</a></li>
           </ul>
         </div>
 
