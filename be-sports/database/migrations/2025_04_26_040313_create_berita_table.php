@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('deskripsi');
-            $table->text('gambar_sampul');
-            $table->date('tgl_dibuat');
+            $table->text('konten');
+            $table->string('gambar');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }

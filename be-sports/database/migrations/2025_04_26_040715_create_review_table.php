@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('review', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+<<<<<<< HEAD
+            $table->string('ebimail');
+=======
             $table->string('email');
+>>>>>>> bff8b2e3290e9841cf2b540a4d68247efae57636
             $table->text('pesan')->nullable();
             $table->date('tgl_kirim');
             $table->timestamps();
