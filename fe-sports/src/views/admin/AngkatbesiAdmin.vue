@@ -1,7 +1,7 @@
 <template>
-    <!-- <p>coding Jadwal disini</p> -->
+    <!-- <p>coding berita disini</p> -->
     <div class="about-container">
-      <p>This is the Jadwal view</p>
+      <p>This is the Berita view</p>
     </div>
   </template>
   

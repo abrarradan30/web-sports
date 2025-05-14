@@ -7,10 +7,12 @@ import DefaultLayout from '@/views/admin/layouts/DefaultLayout.vue'
 import Admin from '@/views/admin/Admin.vue'
 import Login from '@/views/admin/layouts/Login.vue'
 import BeritaAdmin from '@/views/admin/BeritaAdmin.vue'
-import KategoriAdmin from '@/views/admin/KategoriAdmin.vue'
-import ProductAdmin from '@/views/admin/ProductAdmin.vue'
-import GaleriAdmin from '@/views/admin/GaleriAdmin.vue'
-import ContactAdmin from '@/views/admin/ContactAdmin.vue'
+import ReviewAdmin from '@/views/admin/ReviewAdmin.vue'
+import AnggarAdmin from '@/views/admin/AnggarAdmin.vue'
+import HandballAdmin from '@/views/admin/HandballAdmin.vue'
+import BaseballAdmin from '@/views/admin/BaseballAdmin.vue'
+import AngkatbesiAdmin from '@/views/admin/AngkatbesiAdmin.vue'
+import SumoAdmin from '@/views/admin/SumoAdmin.vue'
 
 
 //import guest disini
@@ -108,29 +110,41 @@ const routes = [
         meta: { requiresAuth: true },
       },
       {
-        path: '/adminkategori',
-        name: 'KategoriAdmin',
-        component: KategoriAdmin,
+        path: '/adminreview',
+        name: 'ReviewAdmin',
+        component: ReviewAdmin,
         meta: { requiresAuth: true },
       },
-      {
-        path: '/adminproduct',
-        name: 'ProductAdmin',
-        component: ProductAdmin,
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/admingaleri',
-        name: 'GaleriAdmin',
-        component: GaleriAdmin,
-        meta: { requiresAuth: true },
-      },
-      {
-        path: '/admincontact',
-        name: 'ContactAdmin',
-        component: ContactAdmin,
-        meta: { requiresAuth: true },
-      },
+        {
+          path: '/adminanggar',
+          name: 'AnggarAdmin',
+          component: AnggarAdmin,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: '/adminhandball',
+          name: 'HandballAdmin',
+          component: HandballAdmin,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: '/adminbaseball',
+          name: 'BaseballAdmin',
+          component: BaseballAdmin,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: '/adminangkatbesi',
+          name: 'AngkatbesiAdmin',
+          component: AngkatbesiAdmin,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: '/adminsumo',
+          name: 'SumoAdmin',
+          component: SumoAdmin,
+          meta: { requiresAuth: true },
+        },
     ],
   },
 ]

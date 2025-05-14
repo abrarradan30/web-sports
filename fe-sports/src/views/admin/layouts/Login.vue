@@ -13,33 +13,6 @@
       <div class="form-container sign-in">
         <form @submit.prevent="login">
           <h1>Sign In</h1>
-          <!-- penerapan icon -->
-          <!-- <div class="social-icons">
-            <a
-              href="#"
-              class="border border-gray-300 rounded-[20%] w-10 h-10 flex items-center justify-center"
-            >
-              <i class="fa-brands fa-google-plus-g"></i>
-            </a>
-            <a
-              href="#"
-              class="border border-gray-300 rounded-[20%] w-10 h-10 flex items-center justify-center"
-            >
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              class="border border-gray-300 rounded-[20%] w-10 h-10 flex items-center justify-center"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              href="#"
-              class="border border-gray-300 rounded-[20%] w-10 h-10 flex items-center justify-center"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </div> -->
           <span>or use your email password</span>
           <input
             v-model="email"

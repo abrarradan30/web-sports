@@ -13,7 +13,7 @@
         <RouterLink to="/berita" class="hover:text-[#ff6500] transition">Berita</RouterLink>
 
         <!-- Mega Menu -->
-        <div class="relative group" @mouseover="showDropdown = true" @mouseleave="showDropdown = false">
+        <div id="olahraga-menu" class="relative group" @mouseover="showDropdown = true" @mouseleave="showDropdown = false">
           <span class="cursor-pointer hover:text-[#ff6500] transition duration-300 ease-in-out">Olahraga</span>
           <div 
             v-if="showDropdown" 
@@ -115,7 +115,7 @@
           <ul class="space-y-2 text-sm text-gray-300">
             <li><a href="/" class="hover:text-white">Dashboard</a></li>
             <li><a href="/berita" class="hover:text-white">Berita</a></li>
-            <li><a href="/olahraga" class="hover:text-white">Olahraga</a></li>
+            <li><a href="#" @click.prevent="scrollToOlahraga" class="hover:text-white">Olahraga</a></li>
             <li><a href="/review" class="hover:text-white">Review</a></li>
           </ul>
         </div>
@@ -130,7 +130,7 @@
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-amber-400 mb-3">Ikuti Kami</h3>
+          <h3 class="text-lg font-semibold text-amber-400 mb-3">Ikuti Kami</h3> 
           <div class="flex space-x-4 text-2xl">
             <a href="https://www.facebook.com/kemenporaIndonesia/?fref=ts" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/kemenpora?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
@@ -160,4 +160,13 @@ const hideDropdown = () => {
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
+
+const scrollToOlahraga = () => {
+  const el = document.getElementById('olahraga-menu')
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    showDropdown.value = true
+  }
+}
+
 </script>
